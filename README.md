@@ -178,7 +178,7 @@ The server’s public hostname (DNS name) and public IP address will be in the o
     `<?php
    phpinfo();`
 
-6. Save and closed the file.  Refresh. This should be your  landing page:
+6. Save and close the file.  Refresh. This should be your  landing page:
 
 ![Php enabled](./images/webhost_php.png)
 
