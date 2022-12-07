@@ -1,7 +1,7 @@
 # PBLproject1
 Task1
 ## Lamp-Stack-Implemetation
-As a Devops Engineer documentation has to be one of my greatest strength.
+
 This is a fun project  to improve my documentation skill.
 # What is a Lamp Stack?
 
@@ -20,9 +20,9 @@ LAMP is a collection of four components that make up a fully functional web deve
 # Create an Ec2 instance 
 *Select region (and launch a new EC2 instance of t2.micro family with Ubuntu Server 20.04 LTS (HVM)*
 
-*Create a Key pair while creating the EC2 instance (in this case i created a .pem key to ssh into my instance)*
+*Create a Key pair while creating the EC2 instance (Create a .pem key or .ppk to use  ssh or putty to connect to the instance)*
 
-*to connect to the Ec2 instance, run the following command*
+*to connect to the Ec2 instance, using ssh on power shell, run the following command *
 
 `ssh -i "task_one.pem" ubuntu@ec.<Public-IP>.compute-1.amazonaws.com`
 
@@ -44,13 +44,15 @@ LAMP is a collection of four components that make up a fully functional web deve
 
 4.  Verify that there is  access locally to the server in the Ubuntu shell, using the either of the following commands.
 
-`curl http://localhost:80` 
+```
+curl http://localhost:80
 
-`curl http://127.0.0.1:80`
+curl http://127.0.0.1:80
+```
 
 ## Test how the Apache HTTP server can respond to requests from the Internet.
 
-[my apache server](http://3.83.230.3:80)(this will not work because the server is no longer running)
+`(http://<Public-IP>:80)`
 
 ![apache page launched ](./images/apache_default%20page.png)
 
@@ -59,7 +61,7 @@ LAMP is a collection of four components that make up a fully functional web deve
 
 `sudo apt install mysql-server`
 
-2. Sudo into the server with the next command
+2. connect to mysql with the next command
 
  `sudo mysql`
 
@@ -109,7 +111,8 @@ To secure server run the next commands
 
 4. Copy and paste the command below in the vim file and save
 
-    `<VirtualHost *:80>
+```
+    <VirtualHost *:80>
        ServerName projectlamp
         ServerAlias www.projectlamp 
          ServerAdmin
@@ -118,6 +121,7 @@ To secure server run the next commands
        ErrorLog ${APACHE_LOG_DIR}/error.log
       CustomLog ${APACHE_LOG_DIR}/access.log combined
    </VirtualHost>`
+```
 
 5. To list available sites run the following commands
 
@@ -155,7 +159,8 @@ The server’s public hostname (DNS name) and public IP address will be in the o
 
 2. Paste in the command
 
-   ` <IfModule mod_dir.c>
+```
+    <IfModule mod_dir.c>
      #Change this:
      #DirectoryIndex index.html index.cgi 
     index.pl index.php index.xhtml index.htm
@@ -163,6 +168,7 @@ The server’s public hostname (DNS name) and public IP address will be in the o
     DirectoryIndex index.php index.html 
    index.cgi index.pl index.xhtml index.htm
     </IfModule>`
+```
 
 3. Reloaded Apache
 
@@ -174,9 +180,10 @@ The server’s public hostname (DNS name) and public IP address will be in the o
 
 5. Add the following text, which is valid PHP code, inside the file:
 
-                                       
+```                                       
     `<?php
    phpinfo();`
+```
 
 6. Save and close the file.  Refresh. This should be your  landing page:
 
